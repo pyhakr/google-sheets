@@ -14,6 +14,7 @@ def main():
     """
     """
 
+
     app_config = get_app_config(
         file=os.path.abspath('../../config/app_config.json'))
 
