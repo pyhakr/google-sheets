@@ -18,7 +18,8 @@ def validate_sheet_structure(sheet_data=None):
     """
 def get_sheet_header_range(sheet_id=None, sheet_column_count=None):
     """
-
+    based on number of columns, update grid_range so we can
+    submit batch request to get all header values
     :param sheet_columns:
     :return:
     """

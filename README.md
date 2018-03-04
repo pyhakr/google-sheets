@@ -16,14 +16,13 @@ new daily amount and the Number of Days will increase by 1 giving us
 the new moving average.
 
 ### Possible Error Conditions
-1. no data in Date field
-2. no data in Visitors field
-3. no Date field
-4. no Visitors field
-5. Visitors data type is not numeric
-6. sheetId does not exist
-7. sheetId is not readable
-8. sheetId is not writable
-9. moving average column format is not numeric
+1. no data in Visitors field
+2. no Date field
+3. no Visitors field
+4. Visitors data type is not numeric
+5. sheetId does not exist
+6. sheetId is not readable
+7. sheetId is not writable
+8. moving average column format is not numeric
 
 

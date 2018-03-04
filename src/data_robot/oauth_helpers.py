@@ -9,8 +9,6 @@ from oauth2client.file import Storage
 # based on https://developers.google.com/sheets/api/quickstart/python
 
 
-
-
 def get_credentials(SCOPES=None,
                     CLIENT_SECRET_FILE=None,
                     APPLICATION_NAME=None):
