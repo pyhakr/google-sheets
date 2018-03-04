@@ -24,4 +24,6 @@ the new moving average.
 6. sheetId does not exist
 7. sheetId is not readable
 8. sheetId is not writable
+9. moving average column format is not numeric
+
 
