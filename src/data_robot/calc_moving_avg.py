@@ -7,9 +7,8 @@ import httplib2
 from oauth2client import tools
 from apiclient import discovery
 from googleapiclient.errors import HttpError
-from oauth_helpers import get_credentials
-from app_config import get_app_config
-from sheet_helpers import *
+from .oauth_helpers import get_credentials
+from .sheet_helpers import *
 
 # based on https://developers.google.com/sheets/api/quickstart/python
 
@@ -196,19 +195,21 @@ def main():
     response = request.execute()
     #print(response)
 
+    update_range = ':'.join([moving_avg_column + "2",
+                             moving_avg_column + str(len(moving_averages) + 1)])
 
     # construct body for batch moving average update
     batch_update_body = {
         "valueInputOption": "RAW",
         "data": [
             {
-                "range": ':'.join([moving_avg_column + "2",
-                                   moving_avg_column + str(len(moving_averages) + 1)]),
+                "range": update_range,
                 "majorDimension": "COLUMNS",
                 "values": [moving_averages]
 
             }
-        ]
+        ],
+        "includeValuesInResponse": True
     }
 
     # add moving averages in one shot
@@ -216,7 +217,7 @@ def main():
         spreadsheetId=SHEET_ID,
         body=batch_update_body)
     response = request.execute()
-    print(response)
+    return response, update_range, moving_averages
 
 
 if __name__ == '__main__':

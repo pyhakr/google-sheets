@@ -1,4 +1,5 @@
-
+import sys
+import json
 
 # https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets#GridRange
 # reusable sheet range
@@ -10,18 +11,21 @@ grid_range = {
         "endColumnIndex": 0
     }
 
-def validate_sheet_structure(sheet_data=None):
-    """
 
-    :param sheet_data:
-    :return:
-    """
+def get_app_config(file=None):
+    try:
+        with open(file, 'r') as app_config_file:
+            return json.load(app_config_file)
+    except (json.JSONDecodeError, FileNotFoundError) as error:
+        print(error.args)
+
+
 def get_sheet_header_range(sheet_id=None, sheet_column_count=None):
     """
     based on number of columns, update grid_range so we can
     submit batch request to get all header values
     :param sheet_columns:
-    :return:
+    :return: properly sized grid range for given sheetId
     """
     grid_range["sheetId"] = sheet_id
     grid_range["startRowIndex"] = 0
@@ -48,5 +52,5 @@ def get_sheet_dimensions(sheet_response=None):
                 columns = prop_value
     except Exception as error:
         print(error.args)
-
+        sys.exit(1)
     return rows, columns

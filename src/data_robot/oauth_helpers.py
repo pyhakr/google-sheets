@@ -23,13 +23,13 @@ def get_credentials(SCOPES=None,
 
     # create new argument parser based on the one already
     # in the oauth2client.tools package
-    try:
-        import argparse
-        flags = argparse.ArgumentParser(parents=[tools.argparser]).parse_args()
-    except ImportError:
-        flags = None
+    # try:
+    #     import argparse
+    #     flags = argparse.ArgumentParser(parents=[tools.argparser]).parse_args()
+    # except ImportError:
+    #     flags = None
 
-
+    flags = True
     home_dir = os.path.expanduser('~')
     credential_dir = os.path.join(home_dir, '.credentials')
     if not os.path.exists(credential_dir):
