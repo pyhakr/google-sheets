@@ -15,7 +15,8 @@ from sheet_helpers import *
 
 def main():
     """
-
+    process google sheet based on sheetId in app config
+    calculate moving average of visitors
     """
 
     # read in config from standard location
@@ -82,6 +83,7 @@ def main():
     moving_avg_column = None
     update_body = None
 
+    # when Moving Average column is missing
     # put moving average in first empty column
     if MOVING_AVERAGE not in sheet_header_list:
         for header_pos in range(1, len(sheet_header_list) + 1):
