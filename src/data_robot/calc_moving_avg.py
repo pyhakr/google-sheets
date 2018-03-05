@@ -7,8 +7,8 @@ import httplib2
 from oauth2client import tools
 from apiclient import discovery
 from googleapiclient.errors import HttpError
-from .oauth_helpers import get_credentials
-from .sheet_helpers import *
+from oauth_helpers import get_credentials
+from sheet_helpers import *
 
 # based on https://developers.google.com/sheets/api/quickstart/python
 
@@ -176,8 +176,8 @@ def main():
                     "cell": {
                         "userEnteredFormat": {
                             "numberFormat": {
-                                "type": "NUMBER",
-                                "pattern": "######"
+                                "type": "NUMBER"
+                                #"pattern": "000000"
                             }
                         }
                     },

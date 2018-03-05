@@ -2,7 +2,7 @@ import os
 import sys
 import json
 import pytest
-from data_robot.calc_moving_avg import main
+from calc_moving_avg import main
 
 
 best_case = "1bI3TlOgd3MOODLUmS8JK7GCORnJbbVgsjmSm0I6Fo7I"
@@ -33,7 +33,7 @@ def update_sheet_id(request):
 
     try:
         with open(file, 'w+') as app_config_file:
-            json.dump(config_data, app_config_file)
+            json.dump(config_data, app_config_file, indent=1)
     except (json.JSONDecodeError, FileNotFoundError) as error:
         print(error.args)
 

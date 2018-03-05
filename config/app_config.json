@@ -1,1 +1,6 @@
-{"client_secret_file": "client_secret.json", "sheet_scopes": "https://www.googleapis.com/auth/spreadsheets", "app_name": "app for DataRobot", "sheet_id": "16GtSTdJfzuD5vDepecgO5xO9Yg3YlFVOtqjVbh5k1VA"}
+{
+ "client_secret_file": "client_secret.json",
+ "sheet_scopes": "https://www.googleapis.com/auth/spreadsheets",
+ "app_name": "app for DataRobot",
+ "sheet_id": "16GtSTdJfzuD5vDepecgO5xO9Yg3YlFVOtqjVbh5k1VA"
+}
